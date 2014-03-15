@@ -10,8 +10,7 @@
 (function($) {
   $.fn.touchwipe = function(settings) {
     var config = {
-      min_move_x: 20,
-      min_move_y: 20,
+      threshold: 20,
       wipeLeft: function() { },
       wipeRight: function() { },
       wipeUp: function() { },
@@ -41,7 +40,7 @@
           var y = e.touches[0].pageY;
           var dx = startX - x;
           var dy = startY - y;
-          if(Math.abs(dx) >= config.min_move_x) {
+          if(Math.abs(dx) >= config.threshold) {
             cancelTouch();
             if(dx > 0) {
               config.wipeLeft();
@@ -50,7 +49,7 @@
               config.wipeRight();
             }
           }
-          else if(Math.abs(dy) >= config.min_move_y) {
+          else if(Math.abs(dy) >= config.threshold) {
             cancelTouch();
             if(dy > 0) {
               config.wipeDown();
