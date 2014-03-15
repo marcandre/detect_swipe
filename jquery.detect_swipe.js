@@ -11,10 +11,6 @@
   $.fn.touchwipe = function(settings) {
     var config = {
       threshold: 20,
-      wipeLeft: function() { },
-      wipeRight: function() { },
-      wipeUp: function() { },
-      wipeDown: function() { },
       preventDefaultEvents: true
     };
 
@@ -25,11 +21,6 @@
       var startY;
       var isMoving = false;
 
-      function cancelTouch() {
-        this.removeEventListener('touchmove', onTouchMove);
-        isMoving = false;
-      }
-
       function onTouchMove(e) {
         if(config.preventDefaultEvents) {
           e.preventDefault();
@@ -39,23 +30,17 @@
           var y = e.touches[0].pageY;
           var dx = startX - x;
           var dy = startY - y;
+          var dir;
           if(Math.abs(dx) >= config.threshold) {
-            cancelTouch();
-            if(dx > 0) {
-              config.wipeLeft();
-            }
-            else {
-              config.wipeRight();
-            }
+            dir = dx > 0 ? 'left' : 'right'
           }
           else if(Math.abs(dy) >= config.threshold) {
-            cancelTouch();
-            if(dy > 0) {
-              config.wipeDown();
-            }
-            else {
-              config.wipeUp();
-            }
+            dir = dy > 0 ? 'down' : 'up'
+          }
+          if(dir) {
+            this.removeEventListener('touchmove', onTouchMove);
+            isMoving = false;
+            $(this).trigger('swipe' + dir);
           }
         }
       }
