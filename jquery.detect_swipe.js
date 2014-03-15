@@ -47,12 +47,12 @@
           this.addEventListener('touchmove', onTouchMove, false);
         }
       }
-      if ('ontouchstart' in document.documentElement) {
+      if ($.fn.detectSwipe.enabled) {
         this.addEventListener('touchstart', onTouchStart, false);
       }
     });
 
     return this;
   };
-
+  $.fn.detectSwipe.enabled = 'ontouchstart' in document.documentElement;
 })(jQuery);

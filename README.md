@@ -15,3 +15,7 @@ How to use
   .on('swiperight', function(){ /*...*/ })
   .on('swipeup',    function(){ /*...*/ })
   .on('swipedown',  function(){ /*...*/ });
+
+This won't have any effect on non-touch devices. You can rely on:
+
+  $.fn.detectSwipe.enabled // true on touch devices, false otherwise
