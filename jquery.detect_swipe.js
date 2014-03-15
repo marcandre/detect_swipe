@@ -8,7 +8,6 @@
   $.fn.detectSwipe = function(settings) {
     var config = {
       threshold: 20,
-      preventDefaultEvents: true
     };
 
     if (settings) $.extend(config, settings);
@@ -19,9 +18,7 @@
       var isMoving = false;
 
       function onTouchMove(e) {
-        if(config.preventDefaultEvents) {
-          e.preventDefault();
-        }
+        e.preventDefault();
         if(isMoving) {
           var x = e.touches[0].pageX;
           var y = e.touches[0].pageY;
