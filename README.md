@@ -20,3 +20,4 @@ This won't have any effect on non-touch devices. You can rely on:
 Global setting:
 
     $.detectSwipe.threshold // The number of pixels your finger must move to trigger a swipe event.  Defaults is 20.
+    $.detectSwipe.preventDefault // Should touchmove events be prevented?  Defaults to true.
