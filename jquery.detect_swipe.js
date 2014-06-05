@@ -55,7 +55,7 @@
   }
 
   function setup() {
-    this.addEventListener('touchstart', onTouchStart, false);
+    this.addEventListener && this.addEventListener('touchstart', onTouchStart, false);
   }
 
   function teardown() {
