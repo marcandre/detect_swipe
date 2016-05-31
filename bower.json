@@ -1,6 +1,6 @@
 {
     "name": "jquery-detect-swipe",
-    "version": "2.1.1",
+    "version": "2.1.2",
     "description": "Gives easy access to left/right/up/down swipe events for iOS and other touch devices.",
     "homepage": "https://github.com/marcandre/detect_swipe",
     "repository": {
