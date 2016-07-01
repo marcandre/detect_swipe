@@ -4,7 +4,19 @@
  * http://github.com/marcandre/detect_swipe
  * Based on touchwipe by Andreas Waltl, netCU Internetagentur (http://www.netcu.de)
  */
-(function($) {
+
+(function (factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define(['jquery'], factory);
+    } else if (typeof exports === 'object') {
+        // Node/CommonJS
+        module.exports = factory(require('jquery'));
+    } else {
+        // Browser globals
+        factory(jQuery);
+    }
+}(function($) {
 
   $.detectSwipe = {
     version: '2.1.2',
@@ -69,4 +81,4 @@
       $(this).on('swipe', $.noop);
     } };
   });
-})(jQuery);
+}));
