@@ -1,4 +1,4 @@
-Copyright (c) 2014 Marc-Andre Lafortune
+Copyright (c) 2016 Marc-Andre Lafortune
 
 MIT License
 
