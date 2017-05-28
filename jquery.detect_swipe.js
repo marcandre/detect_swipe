@@ -43,10 +43,11 @@
       var dx = startX - x;
       var dy = startY - y;
       var dir;
-      if(Math.abs(dx) >= $.detectSwipe.threshold) {
+      var ratio = window.devicePixelRatio || 1;
+      if(Math.abs(dx) * ratio >= $.detectSwipe.threshold) {
         dir = dx > 0 ? 'left' : 'right'
       }
-      else if(Math.abs(dy) >= $.detectSwipe.threshold) {
+      else if(Math.abs(dy) * ratio >= $.detectSwipe.threshold) {
         dir = dy > 0 ? 'up' : 'down'
       }
       if(dir) {
