@@ -1,6 +1,6 @@
 {
   "name": "detect_swipe",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "homepage": "http://github.com/marcandre/detect_swipe",
   "license": "MIT",
   "description": "Simple jQuery extension for swipe events on touch devices",
