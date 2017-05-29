@@ -4,7 +4,7 @@
   "homepage": "http://github.com/marcandre/detect_swipe",
   "license": "MIT",
   "description": "Simple jQuery extension for swipe events on touch devices",
-  "main": "jquery/detect_swipe.js",
+  "main": "jquery.detect_swipe.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/marcandre/detect_swipe.git"
